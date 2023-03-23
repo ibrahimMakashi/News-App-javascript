@@ -16,64 +16,10 @@ const games = document.getElementsByClassName("category-btn")[5];
 
 const navBtn = document.querySelector(".nav-btn");
 const cat_sect = document.querySelector(".category-section");
-navBtn.addEventListener("click", () => {
-  cat_sect.classList.toggle("active");
-});
-
-getData("world");
-function categories(ele) {
-  console.log(ele.innerHTML);
-  if (ele.innerHTML === "News App") {
-    heading.textContent = "Home";
-    getData("world");
-  } else {
-    heading.textContent = ele.innerHTML;
-    getData(ele.innerHTML);
-  }
-}
-
-// home.addEventListener("click", () => {
-//   heading.textContent = "Home";
-//   getData("world");
-// });
-// general.addEventListener("click", () => {
-//   heading.textContent = "General";
-//   getData(general.textContent);
-// });
-// technology.addEventListener("click", () => {
-//   heading.textContent = "Technology";
-//   getData(technology.textContent);
-// });
-// business.addEventListener("click", () => {
-//   heading.textContent = "Business";
-//   getData(business.textContent);
-// });
-// sports.addEventListener("click", () => {
-//   heading.textContent = "Sports";
-//   getData(sports.textContent);
-// });
-// movies.addEventListener("click", () => {
-//   heading.textContent = "Movies";
-//   getData(movies.textContent);
-// });
-// games.addEventListener("click", () => {
-//   heading.textContent = "Games";
-//   getData(games.textContent);
-// });
-
-searchForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const query = searchInput.value;
-  if (query) {
-    getData(query);
-  } else {
-    getData("world");
-  }
-});
 
 async function getData(que) {
   load.style.visibility = "visible";
-  const url = `https://newsapi.org/v2/everything?q=${que}&apiKey=${apiKey}`;
+  const url = `https://newsapi.org/v2/everything?q=${que}&apiKey=0504e243ea4a4765b9fb081101ae2ca9`;
   try {
     const res = await fetch(url);
     const data = await res.json();
@@ -108,3 +54,63 @@ async function getData(que) {
     newsContainer.appendChild(message)
   }
 }
+
+navBtn.addEventListener("click", () => {
+  cat_sect.classList.toggle("active");
+});
+
+getData("world");
+
+function categories(ele) {
+  console.log(ele.innerHTML);
+  if (ele.innerHTML === "News App") {
+    heading.textContent = "Home";
+    getData("world");
+  } else {
+    heading.textContent = ele.innerHTML;
+    getData(ele.innerHTML);
+  }
+}
+
+searchForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const query = searchInput.value;
+  if (query) {
+    getData(query);
+  } else {
+    getData("world");
+  }
+});
+
+// home.addEventListener("click", () => {
+//   heading.textContent = "Home";
+//   getData("world");
+// });
+// general.addEventListener("click", () => {
+//   heading.textContent = "General";
+//   getData(general.textContent);
+// });
+// technology.addEventListener("click", () => {
+//   heading.textContent = "Technology";
+//   getData(technology.textContent);
+// });
+// business.addEventListener("click", () => {
+//   heading.textContent = "Business";
+//   getData(business.textContent);
+// });
+// sports.addEventListener("click", () => {
+//   heading.textContent = "Sports";
+//   getData(sports.textContent);
+// });
+// movies.addEventListener("click", () => {
+//   heading.textContent = "Movies";
+//   getData(movies.textContent);
+// });
+// games.addEventListener("click", () => {
+//   heading.textContent = "Games";
+//   getData(games.textContent);
+// });
+
+
+
+
