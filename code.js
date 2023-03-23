@@ -80,7 +80,7 @@ async function getData(que) {
     load.style.visibility = "hidden";
     const articles = data.articles;
     newsContainer.innerHTML = "";
-    if (articles.lenght === 0) {
+    if (articles.length === 0) {
       const message = document.createElement("p");
       message.innerHTML = "No articles found";
       newsContainer.appendChild(message);
