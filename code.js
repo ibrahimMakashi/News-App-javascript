@@ -19,7 +19,7 @@ const cat_sect = document.querySelector(".category-section");
 
 async function getData(que) {
   load.style.visibility = "visible";
-//   const url = `https://newsapi.org/v2/everything?q=${que}&apiKey=0504e243ea4a4765b9fb081101ae2ca9`
+//   const url = `https://newsapi.org/v2/everything?q=${que}&apiKey=8b294618fd0d4630b49869fdba9359c3`
   const url = `https://newsapi.org/v2/everything?q=${que}&from=2023-02-23&sortBy=publishedAt&apiKey=0504e243ea4a4765b9fb081101ae2ca9`;
   try {
     const res = await fetch(url);
